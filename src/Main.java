@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         HashMap<String, User> users = new HashMap<String, User>();
 
         String owner, sheet_name;
@@ -37,7 +36,9 @@ public class Main {
                     sheet_name = sc.nextLine();
 
                     users.get(owner).createSheet(sheet_name);
-                    System.out.println("System: Create a sheet named" + users.get(owner).sheets.get(sheet_name).sheet_name + " for " + users.get(owner).sheets.get(sheet_name).Owner.user_name);
+                    System.out.println("System: Create a sheet named" +
+                                        users.get(owner).sheets.get(sheet_name).sheet_name +
+                                        " for " + users.get(owner).sheets.get(sheet_name).Owner.user_name);
                     break;
 
                 case "3":

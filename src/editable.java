@@ -1,5 +1,43 @@
-public class editable implements State {
-    public editable(){
-        System.out.println("Editable");
+import java.util.Arrays;
+
+public class editable extends State {
+
+    @Override
+    public void changeValue(int row, int col, String operation) {
+        double sum = 0;
+        if(operation.contains("+")){
+            for(String str: operation.split("\\+")){
+                sum += Double.parseDouble(str);
+            }
+        }
+
+        if(operation.contains("-")){
+            String y[] = operation.split("\\-");
+            sum = 2*Double.parseDouble(y[0]);
+            for(String str: operation.split("\\-")){
+                sum -= Double.parseDouble(str);
+            }
+        }
+
+        if(operation.contains("*")){
+            sum = 1;
+            for(String str: operation.split("\\*")){
+                sum *= Double.parseDouble(str);
+            }
+        }
+
+        if(operation.contains("/")){
+            String y[] = operation.split("\\/");
+            sum = Double.parseDouble(y[0]) * Double.parseDouble(y[0]);
+            for(String str: operation.split("\\/")){
+                sum /= Double.parseDouble(str);
+            }
+        }
+        this.sheet.content[row][col] = sum;
+    }
+
+    @Override
+    public void printSheet(String sheet_name) {
+        System.out.println(Arrays.deepToString(this.sheet.content));
     }
 }

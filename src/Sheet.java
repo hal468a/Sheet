@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public abstract class Sheet {
@@ -8,4 +7,7 @@ public abstract class Sheet {
     protected State state;
     public double[][] content = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
     public abstract void setOwner(User owner);
+
+    protected abstract void setState(State state);
+    protected abstract State getState();
 }
