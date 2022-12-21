@@ -66,11 +66,10 @@ public class Main {
                     users.get(owner).printSheet(sheet_name);
                     break;
                 case "5":
-                    //Change sheet rights
-                    System.out.print("> ");
-                    owner = sc.next();
-                    sheet_name = sc.next();
-                    String right = sc.nextLine();
+//                    System.out.print("> ");
+//                    owner = sc.next();
+//                    sheet_name = sc.next();
+//                    String right = sc.nextLine();
 
                     break;
                 case "6":
