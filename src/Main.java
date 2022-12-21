@@ -1,6 +1,4 @@
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -68,6 +66,10 @@ public class Main {
                     break;
                 case "5":
                     //Change sheet rights
+                    System.out.print("> ");
+                    owner = sc.next();
+                    sheet_name = sc.next();
+                    String right = sc.nextLine();
 
                     break;
                 case "6":
