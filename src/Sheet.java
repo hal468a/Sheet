@@ -15,5 +15,4 @@ public abstract class Sheet {
     // Method
     public abstract void setOwner(User owner);
     protected abstract void setState(String state);
-    public abstract String getState();
 }

@@ -23,9 +23,4 @@ public class ConcreteSheet extends Sheet{
             System.out.println("System: State Error!");
         }
     }
-
-    @Override
-    public String getState() {
-        return state.state_name;
-    }
 }

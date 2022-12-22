@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class editable extends State {
 
-    public editable(Sheet sheet)
+    protected editable(Sheet sheet)
     {
         this.sheet = sheet;
         this.sheet.state = this;

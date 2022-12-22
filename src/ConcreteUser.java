@@ -16,4 +16,10 @@ public class ConcreteUser extends User{
         sheet.setOwner(this);
         sheets.put(name, sheet);
     }
+
+    @Override
+    protected void share(String sheet_name, String otherUser, User other) {
+        this.sheets.get(sheet_name).other_user_list.put(otherUser, other);
+        System.out.println("Share " + user_name + "'s " + sheet_name + " with " + other.user_name);
+    }
 }

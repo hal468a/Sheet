@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class readOnly extends State{
 
-    public readOnly(Sheet sheet)
+    protected readOnly(Sheet sheet)
     {
         this.sheet = sheet;
         this.sheet.state = this;

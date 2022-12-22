@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
         HashMap<String, User> users = new HashMap<String, User>();
 
         String owner, sheet_name;
@@ -75,6 +76,12 @@ public class Main {
                     break;
                 case "6":
                     //Share with other user
+                    System.out.print("> ");
+                    owner = sc.next().replace(" ","");
+                    sheet_name = sc.next().replace(" ","");
+                    String otherUser = sc.nextLine().replace(" ","");
+
+                    users.get(owner).share(sheet_name, otherUser, users.get(otherUser));
                     break;
                 default:
                     System.out.println("System: Please enter a number and try again!");

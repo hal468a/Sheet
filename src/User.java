@@ -7,4 +7,5 @@ public abstract class User {
 
     // ------------ Method --------------
     protected abstract void createSheet(String name);
+    protected abstract void share(String sheet_name, String otherUser, User other);
 }
