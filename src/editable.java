@@ -2,6 +2,13 @@ import java.util.Arrays;
 
 public class editable extends State {
 
+    public editable(Sheet sheet)
+    {
+        this.sheet = sheet;
+        this.sheet.state = this;
+        this.state_name = "Editable";
+    }
+
     @Override
     public void changeValue(int row, int col, String operation) {
         double sum = 0;
@@ -34,10 +41,11 @@ public class editable extends State {
             }
         }
         this.sheet.content[row][col] = sum;
+        printSheet();
     }
 
     @Override
-    public void printSheet(String sheet_name) {
+    public void printSheet() {
         System.out.println(Arrays.deepToString(this.sheet.content));
     }
 }

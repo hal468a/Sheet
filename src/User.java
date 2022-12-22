@@ -7,7 +7,4 @@ public abstract class User {
 
     // ------------ Method --------------
     protected abstract void createSheet(String name);
-    protected abstract void printSheet(String sheet_name);
-    protected abstract void changeValue(String sheet_name, int row, int col, String operation);
-
 }

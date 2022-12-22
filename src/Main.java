@@ -33,10 +33,10 @@ public class Main {
                     //Create sheet
                     System.out.print("> ");
                     owner = sc.next();
-                    sheet_name = sc.nextLine();
+                    sheet_name = sc.nextLine().replace(" ","");
 
                     users.get(owner).createSheet(sheet_name);
-                    System.out.println("System: Create a sheet named" +
+                    System.out.println("System: Create a sheet named " +
                                         users.get(owner).sheets.get(sheet_name).sheet_name +
                                         " for " + users.get(owner).sheets.get(sheet_name).Owner.user_name);
                     break;
@@ -45,32 +45,33 @@ public class Main {
                     //printSheet
                     System.out.print("> ");
                     owner = sc.next();
-                    sheet_name = sc.nextLine();
+                    sheet_name = sc.nextLine().replace(" ","");
 
-                    users.get(owner).printSheet(sheet_name);
+                    users.get(owner).sheets.get(sheet_name).state.printSheet();
                     break;
                 case "4":
                     //Change sheet value
                     System.out.print("> ");
                     owner = sc.next();
-                    sheet_name = sc.nextLine();
+                    sheet_name = sc.nextLine().replace(" ","");
 
-                    users.get(owner).printSheet(sheet_name);
+                    users.get(owner).sheets.get(sheet_name).state.printSheet();
 
                     System.out.print("> ");
                     int row = sc.nextInt();
                     int col = sc.nextInt();
                     String op = sc.nextLine();
 
-                    users.get(owner).changeValue(sheet_name, row, col, op);
-                    users.get(owner).printSheet(sheet_name);
+                    users.get(owner).sheets.get(sheet_name).state.changeValue(row, col, op);
                     break;
                 case "5":
-//                    System.out.print("> ");
-//                    owner = sc.next();
-//                    sheet_name = sc.next();
-//                    String right = sc.nextLine();
+                    System.out.print("> ");
+                    owner = sc.next().replace(" ","");
+                    sheet_name = sc.next().replace(" ","");
+                    String right = sc.nextLine().replace(" ","");
 
+                    users.get(owner).sheets.get(sheet_name).setState(right);
+                    System.out.println("System: Sheet state is changed.");
                     break;
                 case "6":
                     //Share with other user

@@ -4,7 +4,7 @@ public class ConcreteSheet extends Sheet{
     // ----------- Constructor -----------.
     public ConcreteSheet(String name) {
         this.sheet_name = name;
-        this.state = new readOnly();
+        this.state = edit;
     }
 
     // ------------ Method --------------
@@ -14,12 +14,18 @@ public class ConcreteSheet extends Sheet{
     }
 
     @Override
-    protected void setState(State state) {
-        this.state = state;
+    protected void setState(String state) {
+        if(state.equals("ReadOnly")){
+            this.state = read;
+        } else if(state.equals("Editable")) {
+            this.state = edit;
+        } else {
+            System.out.println("System: State Error!");
+        }
     }
 
     @Override
-    protected State getState() {
-        return state;
+    public String getState() {
+        return state.state_name;
     }
 }
