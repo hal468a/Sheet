@@ -12,6 +12,11 @@ public class editable extends State {
     @Override
     public void changeValue(int row, int col, String operation) {
         double sum = 0;
+
+        if(!operation.contains("+") && !operation.contains("-") && !operation.contains("*") && !operation.contains("/")){
+            sum += Double.parseDouble(operation);
+        }
+
         if(operation.contains("+")){
             for(String str: operation.split("\\+")){
                 sum += Double.parseDouble(str);

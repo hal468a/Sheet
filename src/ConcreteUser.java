@@ -1,7 +1,4 @@
-import java.util.Arrays;
-
 public class ConcreteUser extends User{
-
     // ----------- Constructor -----------
     public ConcreteUser(String n)
     {

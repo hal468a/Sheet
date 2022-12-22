@@ -1,6 +1,4 @@
 public class ConcreteSheet extends Sheet{
-    // ------------ Attribute ------------
-
     // ----------- Constructor -----------.
     public ConcreteSheet(String name) {
         this.sheet_name = name;
