@@ -27,7 +27,7 @@ public class Main {
                     System.out.print("> ");
                     String name = sc.nextLine();
 
-                    User user = new ConcreteUser(name);
+                    User user = new User(name);
                     users.put(name, user);
                     break;
                 case "2":

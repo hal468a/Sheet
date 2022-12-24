@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public abstract class Sheet {
+public class Sheet {
     // Attribute
     public String sheet_name;
     public User Owner;
@@ -12,7 +12,24 @@ public abstract class Sheet {
     protected State state;
     public double[][] content = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
 
-    // Method
-    public abstract void setOwner(User owner);
-    protected abstract void setState(String state);
+    // ----------- Constructor -----------.
+    public Sheet(String name) {
+        this.sheet_name = name;
+        this.state = edit;
+    }
+
+    // ------------ Method --------------
+    public void setOwner(User owner) {
+        this.Owner = owner;
+    }
+
+    protected void setState(String state) {
+        if(state.equals("ReadOnly")){
+            this.state = read;
+        } else if(state.equals("Editable")) {
+            this.state = edit;
+        } else {
+            System.out.println("System: State Error!");
+        }
+    }
 }
