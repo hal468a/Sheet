@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  sheet:
+    image: openjdk:11
+    container_name: sheet_service
+    volumes:
+      - ./src:/src
+    working_dir: /src
+    command: >
+      bash -c "mkdir -p /classes && 
+              javac -d /classes Main.java && 
+              java -cp /classes Main"
+    # stdin_open: true  # 保持标准输入打开
+    # tty: true         # 分配一个伪 TTY
