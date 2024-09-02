@@ -3,6 +3,19 @@
 docker compose run --rm sheet
 ```
 # 表單功能說明
+
+```
+---------------Menu---------------
+1. Create a user
+2. Create a sheet
+3. Check a sheet
+4. Change a value in a sheet
+5. Change a sheet's access right.
+6. Collaborate with an other user
+----------------------------------
+> 
+```
+
 ### 1. Create a user (新增使用者)
 ```bash=
 > Louis # 新增 Louis 使用者
