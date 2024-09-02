@@ -10,5 +10,3 @@ services:
       bash -c "mkdir -p /classes && 
               javac -d /classes Main.java && 
               java -cp /classes Main"
-    # stdin_open: true  # 保持标准输入打开
-    # tty: true         # 分配一个伪 TTY
