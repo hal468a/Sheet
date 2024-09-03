@@ -5,7 +5,7 @@ services:
     container_name: sheet_service
     volumes:
       - ./src:/src
-      - ./activate.sh:/activate.sh
     command: >
-      bash -c "chmod +x activate.sh && 
-              ./activate.sh"
+      bash -c "mkdir -p ./classes
+              javac -d ./classes ./src/*.java
+              java -cp ./classes Main"
