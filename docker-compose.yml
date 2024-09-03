@@ -1,11 +1,11 @@
 version: '3.8'
 services:
   sheet:
-    image: openjdk:11
+    image: openjdk:8
     container_name: sheet_service
     volumes:
       - ./src:/src
-    working_dir: /src
+      - ./activate.sh:/activate.sh
     command: >
       bash -c "chmod +x activate.sh && 
               ./activate.sh"
