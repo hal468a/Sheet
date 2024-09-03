@@ -7,6 +7,5 @@ services:
       - ./src:/src
     working_dir: /src
     command: >
-      bash -c "mkdir -p /classes && 
-              javac -d /classes Main.java && 
-              java -cp /classes Main"
+      bash -c "chmod +x activate.sh && 
+              ./activate.sh"
